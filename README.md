@@ -1,6 +1,6 @@
 # Portfolio
 
-This repository serves as the central hub for my personal software developer portfolio. It includes:
+This repository serves as the central hub for my personal software engineer portfolio. It includes:
 
 - The codebase for the portfolio website
 - Design assets
@@ -33,4 +33,5 @@ This file contains all the lessons I learnt while building my personal portfolio
 
 ## How to access the live project
 Link: 
+Demo video:
     
