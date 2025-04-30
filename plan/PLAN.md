@@ -1,7 +1,7 @@
 # Project Plan
 
 - [x] Create the GitHub repository and initialize it.
-- [ ] Define design considerations, including layout, color scheme, typography, and responsiveness.
+- [x] Define design considerations, including layout, color scheme, typography, and responsiveness.
 - [ ] Create high-fidelity UI designs using Figma.
 - [ ] Develop the portfolio website based on the UI designs.
 - [ ] Update and maintain project documentation
