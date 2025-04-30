@@ -2,7 +2,8 @@
 
 - [x] Create the GitHub repository and initialize it.
 - [x] Define design considerations, including layout, color scheme, typography, and responsiveness.
-- [x] Create high-fidelity UI designs using Figma.
+- [x] Create high-fidelity UI designs for Large Screen using Figma
+- [ ] Create high-fidelity UI designs for Mobile Screen using Figma
 - [ ] Develop the portfolio website based on the UI designs.
 - [ ] Update and maintain project documentation
 
