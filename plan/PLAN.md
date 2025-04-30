@@ -2,7 +2,7 @@
 
 - [x] Create the GitHub repository and initialize it.
 - [x] Define design considerations, including layout, color scheme, typography, and responsiveness.
-- [ ] Create high-fidelity UI designs using Figma.
+- [x] Create high-fidelity UI designs using Figma.
 - [ ] Develop the portfolio website based on the UI designs.
 - [ ] Update and maintain project documentation
 
