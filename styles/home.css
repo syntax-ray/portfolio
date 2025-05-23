@@ -3,6 +3,7 @@
     --primary-header-clr: #368472;
     --anchor-clr: #B3B3B3;
     --regular-txt-clr: #0A8266;
+    --anchor-hvr-clr: #ff00cc;
 }
 
 * {
@@ -46,6 +47,10 @@ a {
     text-decoration: none;
     color: var(--anchor-clr);
     font-size: 1.2rem; 
+}
+
+a:hover {
+    color: var(--anchor-hvr-clr);
 }
 
 .personal-summary {
