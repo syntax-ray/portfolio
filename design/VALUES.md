@@ -10,3 +10,4 @@ This file contains all the text assests Eg: the fonts, background colors etc use
 3. Anchor text color - #B3B3B3
 4. Regular text color - #0A8266
 5. Anchor text hover color - #ff00cc
+6. SVG stroke - #B3B3B3

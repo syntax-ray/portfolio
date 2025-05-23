@@ -4,6 +4,7 @@
     --anchor-clr: #B3B3B3;
     --regular-txt-clr: #0A8266;
     --anchor-hvr-clr: #ff00cc;
+    --svg-stroke: #B3B3B3;
 }
 
 * {
@@ -15,8 +16,14 @@
 
 body {
     background-color: var(--main-bg);
-    padding: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 8px;
     max-height: 100vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
@@ -46,7 +53,7 @@ body {
 a {
     text-decoration: none;
     color: var(--anchor-clr);
-    font-size: 1.2rem; 
+    font-size: 1.25rem; 
 }
 
 a:hover {
@@ -54,10 +61,8 @@ a:hover {
 }
 
 .personal-summary {
-    /* min-height: 300px; */
     margin-top: 20px;
     color: var(--regular-txt-clr);
-    /* max-width: 800px; */
     font-size: 1.6rem;
     letter-spacing: 0.3rem;
 }
@@ -79,3 +84,27 @@ a:hover {
     align-items: center;
     color: white;
 }
+
+.footer {
+    height: 100%;
+    display: flex;
+    align-items: end;
+}
+
+.icons-div {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+
+svg {
+    stroke: var(--svg-stroke);
+    height: 32px;
+    width: 32px;
+}
+
+svg:hover {
+    stroke: var(--anchor-hvr-clr);
+}
+
