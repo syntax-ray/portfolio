@@ -20,11 +20,19 @@ let linkedinClicked = false;
 // fun definitions
 function close(item) {
     switch(item) {
-        case "contactPopUp":
+        case "mail":
             contactPopUp.style.visibility = "hidden";
             contactPopUp.innerHTML = "";
             mailClicked = false;
+            break;
+        case "github":
+            contactPopUp.style.visibility = "hidden";
+            contactPopUp.innerHTML = "";
             githubClicked = false;
+            break;
+        case "linkedin":
+            contactPopUp.style.visibility = "hidden";
+            contactPopUp.innerHTML = "";
             linkedinClicked = false;
             break;
         default:
@@ -49,7 +57,13 @@ function copiedAlert() {
 function contactButtonClicked (contactButton) {
     switch (contactButton) {
         case 'mail':
-            if (!mailClicked && !githubClicked && !linkedinClicked) {
+            if (githubClicked) {
+                close("github");
+            }
+            if (linkedinClicked) {
+                close("linkedin");
+            }
+            if (!mailClicked) {
                 mailClicked = true
                 contactPopUp.style.visibility = "visible";
 
@@ -82,7 +96,7 @@ function contactButtonClicked (contactButton) {
                         </svg> `;
                 closeIcon.classList.add("svg-fill");
                 closeIcon.style.cursor = "pointer";
-                closeIcon.addEventListener("click", () => close("contactPopUp"));
+                closeIcon.addEventListener("click", () => close("mail"));
                 
 
                 contactPopUp.appendChild(popUpText);
@@ -91,7 +105,13 @@ function contactButtonClicked (contactButton) {
             }
             break;
             case 'github':
-                if (!githubClicked && !mailClicked && !linkedinClicked) {
+                if (mailClicked) {
+                    close("mail");
+                }
+                if (linkedinClicked) {
+                    close("linkedin");
+                }
+                if (!githubClicked) {
                     githubClicked = true
                     contactPopUp.style.visibility = "visible";
     
@@ -111,7 +131,7 @@ function contactButtonClicked (contactButton) {
                             </svg> `;
                     closeIcon.classList.add("svg-fill");
                     closeIcon.style.cursor = "pointer";
-                    closeIcon.addEventListener("click", () => close("contactPopUp"));
+                    closeIcon.addEventListener("click", () => close("github"));
                     
     
                     contactPopUp.appendChild(popUpText);
@@ -119,7 +139,13 @@ function contactButtonClicked (contactButton) {
                 }
                 break;
                 case 'linkedin':
-                    if (!githubClicked && !mailClicked && !linkedinClicked) {
+                    if (mailClicked) {
+                        close("mail");
+                    }
+                    if (githubClicked) {
+                        close("github");
+                    }
+                    if (!linkedinClicked) {
                         linkedinClicked = true
                         contactPopUp.style.visibility = "visible";
         
@@ -139,7 +165,7 @@ function contactButtonClicked (contactButton) {
                                 </svg> `;
                         closeIcon.classList.add("svg-fill");
                         closeIcon.style.cursor = "pointer";
-                        closeIcon.addEventListener("click", () => close("contactPopUp"));
+                        closeIcon.addEventListener("click", () => close("linkedin"));
                         
         
                         contactPopUp.appendChild(popUpText);
