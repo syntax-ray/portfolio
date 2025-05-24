@@ -8,6 +8,7 @@
     --anchor-hvr-clr: #ff00cc;
     --svg-stroke: #B3B3B3;
     --contact-popup: #423E3E;
+    --success-alert: #4BB543;
 }
 
 * {
@@ -113,7 +114,8 @@ a:hover {
 
 .mail-svg,
 .github-svg,
-.linkedin-svg {
+.linkedin-svg,
+.copy-svg {
     stroke: var(--svg-stroke);
     height: 32px;
     width: 32px;
@@ -121,7 +123,8 @@ a:hover {
 
 .mail-svg:hover,
 .github-svg:hover,
-.linkedin-svg:hover {
+.linkedin-svg:hover,
+.copy-svg:hover {
     stroke: var(--anchor-hvr-clr);
 }
 
@@ -145,4 +148,46 @@ a:hover {
 
 .svg-fill:hover {
     fill: var(--anchor-hvr-clr);
+}
+
+
+
+#snackbar {
+    visibility: hidden;
+    min-width: 100px; /* Set a default minimum width */
+    color: #fff; 
+    text-align: center; 
+    border-radius: 4px; 
+    padding: 16px;
+    font-family: "Viga", sans-serif;
+    background-color: var(--success-alert);
+}
+
+#snackbar.show {
+    visibility: visible; 
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+  
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
 }
