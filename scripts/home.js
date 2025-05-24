@@ -1,7 +1,7 @@
 let REGULAR_TXT_CLR = "#0A8266";
 let EMAIL = "okoth46@gmail.com";
 let GITHUB = "https://github.com/syntax-ray";
-let LINKEDIN = "www.linkedin.com/in/donald-okoth-6a225720b";
+let LINKEDIN = "https://linkedin.com/in/donald-okoth-6a225720b";
 
 
 // icons
@@ -95,11 +95,12 @@ function contactButtonClicked (contactButton) {
                     githubClicked = true
                     contactPopUp.style.visibility = "visible";
     
-                    let popUpText = document.createElement("p");
+                    let popUpText = document.createElement("a");
+                    popUpText.href = GITHUB;
                     popUpText.textContent = GITHUB;
-                    popUpText.style.color = REGULAR_TXT_CLR;
-                    popUpText.style.fontFamily = `"Viga", sans-serif`;
-                    popUpText.style.fontSize = "1.1rem";
+                    popUpText.target = "_blank";
+                    popUpText.rel = "noopener noreferrer";
+                    popUpText.classList.add("contact-me-txt");
     
                     let closeIcon = document.createElement("span");
                     closeIcon.innerHTML = 
@@ -122,11 +123,12 @@ function contactButtonClicked (contactButton) {
                         linkedinClicked = true
                         contactPopUp.style.visibility = "visible";
         
-                        let popUpText = document.createElement("p");
+                        let popUpText = document.createElement("a");
+                        popUpText.href = LINKEDIN;
                         popUpText.textContent = LINKEDIN;
-                        popUpText.style.color = REGULAR_TXT_CLR;
-                        popUpText.style.fontFamily = `"Viga", sans-serif`;
-                        popUpText.style.fontSize = "1.1rem";
+                        popUpText.target = "_blank";
+                        popUpText.rel = "noopener noreferrer";
+                        popUpText.classList.add("contact-me-txt");
         
                         let closeIcon = document.createElement("span");
                         closeIcon.innerHTML = 

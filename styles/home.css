@@ -60,7 +60,8 @@ body {
     gap: 24px;
 }
 
-a {
+a,
+.contact-me-txt {
     text-decoration: none;
     color: var(--anchor-clr);
     font-size: 1.25rem; 
