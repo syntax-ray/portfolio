@@ -7,6 +7,7 @@
     --regular-txt-clr: #0A8266;
     --anchor-hvr-clr: #ff00cc;
     --svg-stroke: #B3B3B3;
+    --contact-popup: #423E3E;
 }
 
 * {
@@ -100,6 +101,7 @@ a:hover {
     height: 100%;
     display: flex;
     align-items: end;
+    gap: 16px;
 }
 
 .icons-div {
@@ -109,13 +111,38 @@ a:hover {
 }
 
 
-svg {
+.mail-svg,
+.github-svg,
+.linkedin-svg {
     stroke: var(--svg-stroke);
     height: 32px;
     width: 32px;
 }
 
-svg:hover {
+.mail-svg:hover,
+.github-svg:hover,
+.linkedin-svg:hover {
     stroke: var(--anchor-hvr-clr);
 }
 
+#contact-popup {
+    width: fit-content;
+    height: 52px;
+    border-radius: 12px;
+    background-color: var(--contact-popup);
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    gap: 20px;
+}
+
+.svg-fill {
+    fill: var(--svg-stroke);
+    height: 32px;
+    width: 32px;
+}
+
+.svg-fill:hover {
+    fill: var(--anchor-hvr-clr);
+}
