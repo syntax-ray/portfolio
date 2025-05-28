@@ -28,10 +28,13 @@ This file contains all the lessons I learnt while building my personal portfolio
 
 
 ## The means to the end
+1. HTML
+2. CSS
+3. Javascript
+4. Github pages
 
 
 
 ## How to access the live project
-Link: 
-Demo video:
+Link: https://syntax-ray.github.io/portfolio/
     
