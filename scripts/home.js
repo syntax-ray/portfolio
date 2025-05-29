@@ -31,7 +31,7 @@ const topProjects = [
             "hasWebsite": true,
             "link": "https://syntax-ray.github.io/portfolio/"
         },
-        "tools": ["HTML", "CSS", "Javascript", "Github Pages"]
+        "tools": ["HTML", "CSS", "Javascript", "GithubPages"]
     },
 
 ]
