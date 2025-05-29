@@ -61,15 +61,22 @@ body {
 }
 
 a,
-.contact-me-txt {
+.contact-me-txt,
+#next-project{
     text-decoration: none;
     color: var(--anchor-clr);
     font-size: 1.25rem; 
     font-family: "Inter", sans-serif;
 }
 
-a:hover {
+a:hover, 
+#next-project:hover {
     color: var(--anchor-hvr-clr);
+    cursor: pointer;
+}
+
+#next-project {
+   display: none;
 }
 
 .personal-summary {
@@ -93,10 +100,38 @@ a:hover {
     display: flex;
     min-height: 420px;
     display: flex;
+    flex-direction: column;
+    gap: 24px;
     justify-content: center;
     align-items: center;
     color: white;
     font-family: "Viga", sans-serif;
+    display: none;
+}
+
+#next-project-btn {
+    background-color: var(--primary-header-clr);
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    height: 60px;
+    width: 120px;
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem;
+    display: none;
+}
+
+
+.project-item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer {
@@ -137,8 +172,9 @@ a:hover {
     visibility: hidden;
     display: flex;
     align-items: center;
-    padding: 8px;
-    gap: 20px;
+    padding-left: 8px; 
+    padding-right: 8px;
+    gap: 20px; 
 }
 
 .svg-fill {
@@ -155,7 +191,7 @@ a:hover {
 
 #snackbar {
     visibility: hidden;
-    min-width: 100px; /* Set a default minimum width */
+    min-width: 100px;
     color: #fff; 
     text-align: center; 
     border-radius: 4px; 
@@ -191,4 +227,106 @@ a:hover {
 @keyframes fadeout {
   from {bottom: 30px; opacity: 1;}
   to {bottom: 0; opacity: 0;}
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 480px;
+    height: 200px;
+    border-radius: 12px;
+    perspective: 1000px; 
+}
+  
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 12px;
+}
+  
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+  
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+  
+.flip-card-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border: 1px solid var(--primary-header-clr);
+    border-radius: 16px;
+}
+  
+.flip-card-back {
+    border: 1px solid var(--primary-header-clr);
+    color: white;
+    transform: rotateY(180deg);
+    text-align: start;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px; 
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-family: "Viga", sans-serif;
+    color: var(--primary-header-clr);
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.project-content {
+    font-size: 1.2rem;
+    color: var(--regular-txt-clr);
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    letter-spacing: 0.2rem;
+    margin-top: 8px;
+}
+
+.project-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+#project-demo,
+#project-website {
+    display: none;
+} 
+
+
+.project-tools-list {
+    list-style: none;
+    font-size: 1rem;
+    color: var(--regular-txt-clr);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    letter-spacing: 0.2rem;
+    margin-top: 8px;
+}
+
+#tools-header {
+    font-size: 1.2rem;
+    color: var(--primary-header-clr);
+    font-family: "Viga", sans-serif;
+    margin-bottom: 8px;
 }
