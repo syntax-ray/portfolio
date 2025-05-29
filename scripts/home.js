@@ -1,3 +1,7 @@
+/*
+    I am listing the top projects below instead of importing them from the projects.js file because to the best of my knowledge,
+    Github Pages does not support importing modules from other files.
+*/
 const topProjects = [
     {
         "id": 1,
