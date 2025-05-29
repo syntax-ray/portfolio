@@ -1,3 +1,5 @@
+import topProjects  from "./project.js";
+
 let REGULAR_TXT_CLR = "#0A8266";
 let EMAIL = "okoth46@gmail.com";
 let GITHUB = "https://github.com/syntax-ray";
@@ -9,6 +11,7 @@ let mail = document.querySelector("#mail");
 let github = document.querySelector("#github");
 let linkedin = document.querySelector('#linkedin');
 let contactPopUp = document.querySelector("#contact-popup");
+let topProjectsSection = document.querySelector(".actual-top-projects");
 
 
 let mailClicked = false;
@@ -16,6 +19,8 @@ let githubClicked = false;
 let linkedinClicked = false;
 
 
+let nextProject = document.querySelector("#next-project");
+let currentProject = 0;
 
 // fun definitions
 function close(item) {
@@ -76,7 +81,7 @@ function contactButtonClicked (contactButton) {
 
                 let copyIcon = document.createElement("span");
                 copyIcon.innerHTML = 
-                    `<svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    `<svg width="28" height="28" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10 30H8C6.93913 30 5.92172 29.5786 5.17157 28.8284C4.42143 28.0783 4 27.0609 4 26V8C4 6.93913 4.42143 5.92172 5.17157 5.17157C5.92172 4.42143 6.93913 4 8 4H26C27.0609 4 28.0783 4.42143 28.8284 5.17157C29.5786 5.92172 30 6.93913 30 8V10M22 18H40C42.2091 18 44 19.7909 44 22V40C44 42.2091 42.2091 44 40 44H22C19.7909 44 18 42.2091 18 40V22C18 19.7909 19.7909 18 22 18Z" 
                         stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>`;
@@ -89,7 +94,7 @@ function contactButtonClicked (contactButton) {
 
                 let closeIcon = document.createElement("span");
                 closeIcon.innerHTML = 
-                        `<svg width="32" height="32" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        `<svg width="28" height="28" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.8 38L10 35.2L21.2 24L10 12.8L12.8 10L24 21.2L35.2 10L38 12.8L26.8 24L38 35.2L35.2 38L24 26.8L12.8 38Z" 
                             
                             "/>
@@ -124,7 +129,7 @@ function contactButtonClicked (contactButton) {
     
                     let closeIcon = document.createElement("span");
                     closeIcon.innerHTML = 
-                            `<svg width="32" height="32" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            `<svg width="28" height="28" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12.8 38L10 35.2L21.2 24L10 12.8L12.8 10L24 21.2L35.2 10L38 12.8L26.8 24L38 35.2L35.2 38L24 26.8L12.8 38Z" 
                                 
                                 "/>
@@ -158,7 +163,7 @@ function contactButtonClicked (contactButton) {
         
                         let closeIcon = document.createElement("span");
                         closeIcon.innerHTML = 
-                                `<svg width="32" height="32" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                `<svg width="28" height="28" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12.8 38L10 35.2L21.2 24L10 12.8L12.8 10L24 21.2L35.2 10L38 12.8L26.8 24L38 35.2L35.2 38L24 26.8L12.8 38Z" 
                                     
                                     "/>
@@ -179,9 +184,90 @@ function contactButtonClicked (contactButton) {
 }
 
 
+function displayProject (project) {  
+    let projectTitle = document.querySelector(".project-title");
+        let projectContent = document.querySelector(".project-content");
+        let projectTitleBack = document.querySelector(".project-title-back");
+        let projectToolsList = document.querySelector(".project-tools-list");
+        let projectDemo = document.querySelector("#project-demo");
+        let projectCode = document.querySelector("#project-source-code");
+        let projectWebsite = document.querySelector("#project-website");
+        
+
+        // Reset the project section
+        projectToolsList.innerHTML = "";
+        projectDemo.style.display = "none";
+        projectWebsite.style.display = "none";
+   
+        projectTitleBack.classList.add("project-title");
+
+        projectTitle.textContent = project.title;
+        projectTitleBack.textContent = project.title;
+        project.tools.forEach(tool => {
+            let toolItem = document.createElement("li");
+            toolItem.textContent = tool;
+            projectToolsList.appendChild(toolItem);
+        });
+
+        projectCode.href = project.code;
+        projectCode.target = "_blank";  
+        projectCode.rel = "noopener noreferrer";
+        
+
+        if (project.demo.hasDemo) {
+            projectDemo.style.display = "inline-block";
+            projectDemo.href = project.demo.link;
+            projectDemo.target = "_blank";
+            projectDemo.rel = "noopener noreferrer";
+        }
+
+        if (project.website.hasWebsite) {
+            projectWebsite.style.display = "inline-block";
+            projectWebsite.href = project.website.link;
+            projectWebsite.target = "_blank";
+            projectWebsite.rel = "noopener noreferrer";
+        }
+
+        projectContent.textContent = project.description;
+        topProjectsSection.style.display = "flex";
+
+}
+
+
+function loadTopProjectsSection () {
+    if (topProjects && topProjects.length == 0) {
+        topProjectsSection.style.display = "flex";
+        topProjectsSection.textContent = "No projects to show at the moment";
+        topProjectsSection.style.fontFamily = `"Viga", sans-serif`;
+        topProjectsSection.style.fontSize = "1.8rem";
+    } else if (topProjects && topProjects.length > 0) {
+        let firstProject = topProjects[0];
+        displayProject(firstProject);
+    }
+    return 0
+}
+
 
 
 // click listeners
 mail.addEventListener("click", ()=> contactButtonClicked("mail"));
 github.addEventListener("click", () => contactButtonClicked("github"));
 linkedin.addEventListener("click", () => contactButtonClicked("linkedin"));
+
+
+
+loadTopProjectsSection();
+
+if (topProjects.length > 1) {
+    nextProject.textContent = "Next";
+    nextProject.style.display = "inline-block";
+    nextProject.addEventListener("click", () => {
+        if (currentProject + 1 >= topProjects.length) {
+            currentProject = 0;
+            displayProject(topProjects[currentProject]);
+        } else {
+            currentProject += 1;
+            displayProject(topProjects[currentProject]);
+        }
+    });
+}
