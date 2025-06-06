@@ -48,6 +48,8 @@ let github = document.querySelector("#github");
 let linkedin = document.querySelector('#linkedin');
 let contactPopUp = document.querySelector("#contact-popup");
 let topProjectsSection = document.querySelector(".actual-top-projects");
+let searchIcon = document.querySelector("#search-svg");
+let searchInput = document.querySelector("#search")
 
 
 let mailClicked = false;
@@ -283,12 +285,28 @@ function loadTopProjectsSection () {
     return 0
 }
 
+function toggleDisplay(el, displayType = 'block') {
+    if (getComputedStyle(el).display === 'none') {
+      el.style.display = displayType;
+    } else {
+      el.style.display = 'none';
+    }
+  }
 
+function searchIconClicked() {
+    toggleDisplay(searchInput);
+}
+
+function handleSearch(event) {
+    console.log(event.target.value);
+}
 
 // click listeners
 mail.addEventListener("click", ()=> contactButtonClicked("mail"));
 github.addEventListener("click", () => contactButtonClicked("github"));
 linkedin.addEventListener("click", () => contactButtonClicked("linkedin"));
+searchIcon.addEventListener("click", ()=> searchIconClicked());
+search.addEventListener("input", (event)=> handleSearch(event));
 
 
 
