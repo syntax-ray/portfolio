@@ -2,7 +2,7 @@
     I am listing the top projects below instead of importing them from the projects.js file because to the best of my knowledge,
     Github Pages does not support importing modules from other files.
 */
-const topProjects = [
+const projects = [
     {
         "id": 1,
         "title": "Data Migration Solution",
@@ -16,7 +16,8 @@ const topProjects = [
             "hasWebsite": false,
             "link": undefined
         },
-        "tools": ["Python", "SQL", "Docker", "PostgreSQL", "MSSQL"]
+        "tools": ["Python", "SQL", "Docker", "PostgreSQL", "MSSQL"],
+        "topProject": true
     },
     {
         id: 2,
@@ -31,10 +32,12 @@ const topProjects = [
             "hasWebsite": true,
             "link": "https://syntax-ray.github.io/portfolio/"
         },
-        "tools": ["HTML", "CSS", "Javascript", "GithubPages"]
+        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
+        "topProject": true
     },
+];
 
-]
+let topProjects = projects.filter((project) => project["topProject"] === true);
 
 let REGULAR_TXT_CLR = "#0A8266";
 let EMAIL = "okoth46@gmail.com";
