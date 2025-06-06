@@ -373,6 +373,12 @@ a:hover,
     gap: 8px;
 }
 
+#projects-display {
+    display: none;
+    margin-bottom: 20px;
+    min-height: 200px;
+}
+
 
 
 

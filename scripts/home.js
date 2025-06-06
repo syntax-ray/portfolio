@@ -38,6 +38,7 @@ const projects = [
 ];
 
 let topProjects = projects.filter((project) => project["topProject"] === true);
+let projectsDisplay = projects;
 
 let REGULAR_TXT_CLR = "#0A8266";
 let EMAIL = "okoth46@gmail.com";
@@ -52,7 +53,8 @@ let linkedin = document.querySelector('#linkedin');
 let contactPopUp = document.querySelector("#contact-popup");
 let topProjectsSection = document.querySelector(".actual-top-projects");
 let searchIcon = document.querySelector("#search-svg");
-let searchInput = document.querySelector("#search")
+let searchInput = document.querySelector("#search");
+let projectsDisplayDiv = document.querySelector("#projects-display");
 
 
 let mailClicked = false;
@@ -227,51 +229,44 @@ function contactButtonClicked (contactButton) {
 
 function displayProject (project) {  
     let projectTitle = document.querySelector(".project-title");
-        let projectContent = document.querySelector(".project-content");
-        let projectTitleBack = document.querySelector(".project-title-back");
-        let projectToolsList = document.querySelector(".project-tools-list");
-        let projectDemo = document.querySelector("#project-demo");
-        let projectCode = document.querySelector("#project-source-code");
-        let projectWebsite = document.querySelector("#project-website");
-        
+    let projectContent = document.querySelector(".project-content");
+    let projectTitleBack = document.querySelector(".project-title-back");
+    let projectToolsList = document.querySelector(".project-tools-list");
+    let projectDemo = document.querySelector("#project-demo");
+    let projectCode = document.querySelector("#project-source-code");
+    let projectWebsite = document.querySelector("#project-website");
+    
+    // Reset the project section
+    projectToolsList.innerHTML = "";
+    projectDemo.style.display = "none";
+    projectWebsite.style.display = "none";
 
-        // Reset the project section
-        projectToolsList.innerHTML = "";
-        projectDemo.style.display = "none";
-        projectWebsite.style.display = "none";
-   
-        projectTitleBack.classList.add("project-title");
-
-        projectTitle.textContent = project.title;
-        projectTitleBack.textContent = project.title;
-        project.tools.forEach(tool => {
-            let toolItem = document.createElement("li");
-            toolItem.textContent = tool;
-            projectToolsList.appendChild(toolItem);
-        });
-
-        projectCode.href = project.code;
-        projectCode.target = "_blank";  
-        projectCode.rel = "noopener noreferrer";
-        
-
-        if (project.demo.hasDemo) {
-            projectDemo.style.display = "inline-block";
-            projectDemo.href = project.demo.link;
-            projectDemo.target = "_blank";
-            projectDemo.rel = "noopener noreferrer";
-        }
-
-        if (project.website.hasWebsite) {
-            projectWebsite.style.display = "inline-block";
-            projectWebsite.href = project.website.link;
-            projectWebsite.target = "_blank";
-            projectWebsite.rel = "noopener noreferrer";
-        }
-
-        projectContent.textContent = project.description;
-        topProjectsSection.style.display = "flex";
-
+    projectTitleBack.classList.add("project-title");
+    projectTitle.textContent = project.title;
+    projectTitleBack.textContent = project.title;
+    project.tools.forEach(tool => {
+        let toolItem = document.createElement("li");
+        toolItem.textContent = tool;
+        projectToolsList.appendChild(toolItem);
+    });
+    projectCode.href = project.code;
+    projectCode.target = "_blank";  
+    projectCode.rel = "noopener noreferrer";
+    
+    if (project.demo.hasDemo) {
+        projectDemo.style.display = "inline-block";
+        projectDemo.href = project.demo.link;
+        projectDemo.target = "_blank";
+        projectDemo.rel = "noopener noreferrer";
+    }
+    if (project.website.hasWebsite) {
+        projectWebsite.style.display = "inline-block";
+        projectWebsite.href = project.website.link;
+        projectWebsite.target = "_blank";
+        projectWebsite.rel = "noopener noreferrer";
+    }
+    projectContent.textContent = project.description;
+    topProjectsSection.style.display = "flex";
 }
 
 
@@ -286,6 +281,41 @@ function loadTopProjectsSection () {
         displayProject(firstProject);
     }
     return 0
+}
+
+function createProjectsSectionRowItems () {
+
+}
+
+function loadDisplayProjects() {
+    if (projectsDisplay && projectsDisplay.length == 0) {
+        projectsDisplayDiv.style.display = "flex";
+        projectsDisplayDiv.style.justifyContent = "center";
+        projectsDisplayDiv.style.alignItems = "center";
+        projectsDisplayDiv.textContent = "No project";
+        projectsDisplayDiv.style.fontFamily = `"Viga", sans-serif`;
+        projectsDisplayDiv.style.color = "white"
+        projectsDisplayDiv.style.fontSize = "1.8rem";
+        projectsDisplayDiv.style.marginTop = "20px";
+    } else {
+        projectsDisplayDiv.style.display = "block";
+        let rowsRequired = undefined;
+        if (projectsDisplay.length <= 3) {
+            rowsRequired = 1
+        } else if (projectsDisplay.length <=6) {
+            rowsRequired = 2
+        } else {
+            rowsRequired = 3
+        }
+        for (let i = 0; i < rowsRequired; i++) {
+            let div = document.createElement('div');
+            div.style.backgroundColor = 'green';
+            div.style.height = '20px'
+            div.style.border = '1px solid red';
+            
+            projectsDisplayDiv.appendChild(div);
+        }
+    }
 }
 
 function toggleDisplay(el, displayType = 'block') {
@@ -314,6 +344,7 @@ search.addEventListener("input", (event)=> handleSearch(event));
 
 
 loadTopProjectsSection();
+loadDisplayProjects();
 
 if (topProjects.length > 1) {
     nextProject.textContent = "Next";
