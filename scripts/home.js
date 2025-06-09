@@ -35,15 +35,197 @@ const projects = [
         "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
         "topProject": true
     },
+    {
+        id: 3,
+        "title": "THREE",
+        "description": `"Get to know me and see what I can do!"`,
+        "code": "https://github.com/syntax-ray/portfolio",
+        "demo": {
+            "hasDemo": false,
+            "link": undefined
+        },
+        "website": {
+            "hasWebsite": true,
+            "link": "https://syntax-ray.github.io/portfolio/"
+        },
+        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
+        "topProject": true
+    },
+    {
+        id: 4,
+        "title": "FOUR",
+        "description": `"Get to know me and see what I can do!"`,
+        "code": "https://github.com/syntax-ray/portfolio",
+        "demo": {
+            "hasDemo": false,
+            "link": undefined
+        },
+        "website": {
+            "hasWebsite": true,
+            "link": "https://syntax-ray.github.io/portfolio/"
+        },
+        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
+        "topProject": true
+    },
+    {
+        id: 5,
+        "title": "FIVE",
+        "description": `"Get to know me and see what I can do!"`,
+        "code": "https://github.com/syntax-ray/portfolio",
+        "demo": {
+            "hasDemo": false,
+            "link": undefined
+        },
+        "website": {
+            "hasWebsite": true,
+            "link": "https://syntax-ray.github.io/portfolio/"
+        },
+        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
+        "topProject": true
+    },
+    {
+        id: 6,
+        "title": "SIX",
+        "description": `"Get to know me and see what I can do!"`,
+        "code": "https://github.com/syntax-ray/portfolio",
+        "demo": {
+            "hasDemo": false,
+            "link": undefined
+        },
+        "website": {
+            "hasWebsite": true,
+            "link": "https://syntax-ray.github.io/portfolio/"
+        },
+        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
+        "topProject": true
+    },
+    {
+        id: 7,
+        "title": "SEVEN",
+        "description": `"Get to know me and see what I can do!"`,
+        "code": "https://github.com/syntax-ray/portfolio",
+        "demo": {
+            "hasDemo": false,
+            "link": undefined
+        },
+        "website": {
+            "hasWebsite": true,
+            "link": "https://syntax-ray.github.io/portfolio/"
+        },
+        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
+        "topProject": true
+    },
+    {
+        id: 8,
+        "title": "EIGHT",
+        "description": `"Get to know me and see what I can do!"`,
+        "code": "https://github.com/syntax-ray/portfolio",
+        "demo": {
+            "hasDemo": false,
+            "link": undefined
+        },
+        "website": {
+            "hasWebsite": true,
+            "link": "https://syntax-ray.github.io/portfolio/"
+        },
+        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
+        "topProject": true
+    },
+    {
+        id: 9,
+        "title": "NINE",
+        "description": `"Get to know me and see what I can do!"`,
+        "code": "https://github.com/syntax-ray/portfolio",
+        "demo": {
+            "hasDemo": false,
+            "link": undefined
+        },
+        "website": {
+            "hasWebsite": true,
+            "link": "https://syntax-ray.github.io/portfolio/"
+        },
+        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
+        "topProject": true
+    },
+    {
+        id: 10,
+        "title": "TEN",
+        "description": `"Get to know me and see what I can do!"`,
+        "code": "https://github.com/syntax-ray/portfolio",
+        "demo": {
+            "hasDemo": false,
+            "link": undefined
+        },
+        "website": {
+            "hasWebsite": true,
+            "link": "https://syntax-ray.github.io/portfolio/"
+        },
+        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
+        "topProject": true
+    },
+    {
+        id: 11,
+        "title": "ELEVEN",
+        "description": `"Get to know me and see what I can do!"`,
+        "code": "https://github.com/syntax-ray/portfolio",
+        "demo": {
+            "hasDemo": false,
+            "link": undefined
+        },
+        "website": {
+            "hasWebsite": true,
+            "link": "https://syntax-ray.github.io/portfolio/"
+        },
+        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
+        "topProject": true
+    },
+    {
+        id: 12,
+        "title": "TWELVE",
+        "description": `"Get to know me and see what I can do!"`,
+        "code": "https://github.com/syntax-ray/portfolio",
+        "demo": {
+            "hasDemo": false,
+            "link": undefined
+        },
+        "website": {
+            "hasWebsite": true,
+            "link": "https://syntax-ray.github.io/portfolio/"
+        },
+        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
+        "topProject": true
+    },
+    {
+        id: 13,
+        "title": "THIRTEEN",
+        "description": `"Get to know me and see what I can do!"`,
+        "code": "https://github.com/syntax-ray/portfolio",
+        "demo": {
+            "hasDemo": false,
+            "link": undefined
+        },
+        "website": {
+            "hasWebsite": true,
+            "link": "https://syntax-ray.github.io/portfolio/"
+        },
+        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
+        "topProject": true
+    },
 ];
 
 let topProjects = projects.filter((project) => project["topProject"] === true);
 let projectsDisplay = projects;
+let projectIndexStart = 0;
+let projectIndexEnd =  2;
 
-let REGULAR_TXT_CLR = "#0A8266";
-let EMAIL = "okoth46@gmail.com";
-let GITHUB = "https://github.com/syntax-ray";
-let LINKEDIN = "https://linkedin.com/in/donald-okoth-6a225720b";
+const REGULAR_TXT_CLR = "#0A8266";
+const NAV_TXT_CLR = "#B3B3B3";
+const NAV_TXT_HVR_CLR = "#ff00cc";
+const NAV_FONT = '"Inter", sans-serif';
+
+const EMAIL = "okoth46@gmail.com";
+const GITHUB = "https://github.com/syntax-ray";
+const LINKEDIN = "https://linkedin.com/in/donald-okoth-6a225720b";
 
 
 // icons
@@ -55,6 +237,7 @@ let topProjectsSection = document.querySelector(".actual-top-projects");
 let searchIcon = document.querySelector("#search-svg");
 let searchInput = document.querySelector("#search");
 let projectsDisplayDiv = document.querySelector("#projects-display");
+let projectsDiv = document.querySelector(".projects");
 
 
 let mailClicked = false;
@@ -64,6 +247,7 @@ let linkedinClicked = false;
 
 let nextProject = document.querySelector("#next-project");
 let currentProject = 0;
+let contentsInPage = 0;
 
 // fun definitions
 function close(item) {
@@ -283,11 +467,123 @@ function loadTopProjectsSection () {
     return 0
 }
 
-function createProjectsSectionRowItems () {
+function createProjectsSectionRow (projects) {
+    let div = document.createElement('div');
+    div.style.display = "flex";
+    div.style.justifyContent = "center";
+    div.style.gap = "80px"
+    div.style.marginBottom = '20px';
 
+    for (const project of projects) {
+        const projectItem = document.createElement("div");
+        projectItem.className = "project-item";
+
+        // Create flip-card structure
+        const flipCard = document.createElement("div");
+        flipCard.className = "flip-card";
+
+        const flipCardInner = document.createElement("div");
+        flipCardInner.className = "flip-card-inner";
+
+        // Front side of the card
+        const flipCardFront = document.createElement("div");
+        flipCardFront.className = "flip-card-front";
+
+        const projectTitle = document.createElement("h3");
+        projectTitle.className = "project-title";
+        projectTitle.textContent = project.title;
+        flipCardFront.appendChild(projectTitle);
+
+        const projectContentDiv = document.createElement("div");
+        projectContentDiv.className = "project-content-div";
+
+        const projectContent = document.createElement("p");
+        projectContent.textContent = project.description;
+        projectContent.style.fontSize = '1.2rem';
+        projectContent.style.color = REGULAR_TXT_CLR;
+        projectContent.style.fontFamily = '"Inter", sans-serif';
+        projectContent.style.textAlign = 'center';
+        projectContent.style.letterSpacing = '0.2rem';
+        projectContent.style.marginTop = '8px';
+        projectContent.style.fontWeight = "600"
+        projectContentDiv.appendChild(projectContent);
+
+        flipCardFront.appendChild(projectContentDiv);
+
+        // Back side of the card
+        const flipCardBack = document.createElement("div");
+        flipCardBack.className = "flip-card-back";
+
+        const projectTitleBack = document.createElement("h3");
+        projectTitleBack.className = "project-title";
+        projectTitleBack.textContent = project.title;
+        flipCardBack.appendChild(projectTitleBack);
+
+        const toolsContainer = document.createElement("div");
+        const toolsList = document.createElement("ul");
+        toolsList.className = "project-tools-list";
+        project.tools.forEach(tool => {
+            let toolItem = document.createElement("li");
+            toolItem.textContent = tool;
+            toolItem.style.fontWeight = "600";
+            toolItem.style.fontFamily = '"Viga", sans-serif';
+            toolsList.appendChild(toolItem);
+        });
+        toolsContainer.appendChild(toolsList);
+
+        flipCardBack.appendChild(toolsContainer);
+
+        // Assemble flip card
+        flipCardInner.appendChild(flipCardFront);
+        flipCardInner.appendChild(flipCardBack);
+        flipCard.appendChild(flipCardInner);
+        projectItem.appendChild(flipCard);
+
+        // Create project links section
+        const projectLinks = document.createElement("div");
+        projectLinks.className = "project-links";
+
+        // Demo link
+        if (project.demo.hasDemo) {
+            const demoLink = document.createElement("a");
+            demoLink.href = project.demo.link;
+            demoLink.className = "project-link";
+            demoLink.id = "project-demo";
+            demoLink.target = "_blank";
+            demoLink.textContent = "Demo";
+            projectLinks.appendChild(demoLink);
+        }
+
+        // Code link
+        const codeLink = document.createElement("a");
+        codeLink.href = project.code;
+        codeLink.className = "project-link";
+        codeLink.target = "_blank";
+        codeLink.textContent = "Code";
+        projectLinks.appendChild(codeLink);
+
+        // Website link
+        if (project.website.hasWebsite) {
+            const websiteLink = document.createElement("a");
+            websiteLink.href = project.website.link;
+            websiteLink.className = "project-link";
+            websiteLink.display = 'inline-block';
+            websiteLink.target = "_blank";
+            websiteLink.textContent = "Website";
+            projectLinks.appendChild(websiteLink);
+        }
+    
+
+        // Append links section to main container
+        projectItem.appendChild(projectLinks);
+        div.appendChild(projectItem);
+        contentsInPage += 1;
+    }
+    return div;
 }
 
 function loadDisplayProjects() {
+    projectsDisplayDiv.innerHTML = '';
     if (projectsDisplay && projectsDisplay.length == 0) {
         projectsDisplayDiv.style.display = "flex";
         projectsDisplayDiv.style.justifyContent = "center";
@@ -298,24 +594,19 @@ function loadDisplayProjects() {
         projectsDisplayDiv.style.fontSize = "1.8rem";
         projectsDisplayDiv.style.marginTop = "20px";
     } else {
+        // console.log(`Before Project index start === ${projectIndexStart}`);
+        // console.log(`Before Project index end === ${projectIndexEnd}`);
         projectsDisplayDiv.style.display = "block";
-        let rowsRequired = undefined;
-        if (projectsDisplay.length <= 3) {
-            rowsRequired = 1
-        } else if (projectsDisplay.length <=6) {
-            rowsRequired = 2
-        } else {
-            rowsRequired = 3
-        }
-        for (let i = 0; i < rowsRequired; i++) {
-            let div = document.createElement('div');
-            div.style.backgroundColor = 'green';
-            div.style.height = '20px'
-            div.style.border = '1px solid red';
-            
-            projectsDisplayDiv.appendChild(div);
-        }
+        let projectSlice = projectsDisplay.slice(projectIndexStart, projectIndexEnd);
+        // console.log(projectSlice);
+        let row = createProjectsSectionRow(projectSlice);
+        projectsDisplayDiv.appendChild(row);
+        projectIndexStart = projectIndexEnd;
+        projectIndexEnd += 2;
     }
+    // console.log(`After Project index start === ${projectIndexStart}`);
+    // console.log(`After Project index end === ${projectIndexEnd}`);
+    // console.log(`After Contents in page === ${contentsInPage}`);
 }
 
 function toggleDisplay(el, displayType = 'block') {
@@ -326,7 +617,7 @@ function toggleDisplay(el, displayType = 'block') {
     }
   }
 
-function searchIconClicked() {
+  function searchIconClicked() {
     toggleDisplay(searchInput);
 }
 
@@ -340,7 +631,6 @@ github.addEventListener("click", () => contactButtonClicked("github"));
 linkedin.addEventListener("click", () => contactButtonClicked("linkedin"));
 searchIcon.addEventListener("click", ()=> searchIconClicked());
 search.addEventListener("input", (event)=> handleSearch(event));
-
 
 
 loadTopProjectsSection();
@@ -359,3 +649,74 @@ if (topProjects.length > 1) {
         }
     });
 }
+
+let navDiv = document.createElement('div');
+navDiv.style.height = "20px";
+projectsDisplayDiv.appendChild(navDiv);
+navDiv.style.display = "flex";
+navDiv.style.alignItems = "center";
+navDiv.style.justifyContent = "center";
+navDiv.style.gap = "16px";
+
+let prev = document.createElement('p');
+prev.style.color = NAV_TXT_CLR;
+prev.style.fontFamily = NAV_FONT;
+prev.style.fontSize = "1.25rem";
+prev.textContent = "PREV";
+prev.style.display = "none";
+prev.addEventListener('mouseenter', () => {
+prev.style.color = NAV_TXT_HVR_CLR;
+    prev.style.cursor = 'pointer';
+});
+prev.addEventListener('mouseleave', () => {
+    prev.style.color = NAV_TXT_CLR;
+});
+
+navDiv.append(prev);
+
+let next = document.createElement('p');
+next.textContent = 'NEXT';
+next.style.color = NAV_TXT_CLR;
+next.style.fontFamily = NAV_FONT;
+next.style.fontSize = "1.25rem";
+
+projectsDiv.appendChild(navDiv);
+
+if (projectsDisplay.length > 2) {
+    next.style.display = "block";
+} else {
+    next.style.display = "none";
+}
+navDiv.append(next);
+
+next.addEventListener('mouseenter', () => {
+    next.style.color = NAV_TXT_HVR_CLR;
+    next.style.cursor = 'pointer';
+});
+next.addEventListener('mouseleave', () => {
+    next.style.color = NAV_TXT_CLR;
+});
+
+next.addEventListener('click', () => {
+    contentsInPage = 0;
+    loadDisplayProjects();
+    prev.style.display = "block";
+    if (projectIndexStart >= projectsDisplay.length) {
+        next.style.display = 'none'; 
+    }
+});
+
+prev.addEventListener('click', () => {
+    if (contentsInPage === 2) {
+        projectIndexStart = projectIndexStart - (contentsInPage + 2);
+    } else if (contentsInPage === 1) {
+        projectIndexStart = projectIndexStart - (contentsInPage + 3);
+    }
+    projectIndexEnd = projectIndexStart + 2;
+    contentsInPage = 0;
+    loadDisplayProjects();
+    next.style.display = 'block';
+    if (projectIndexStart == 2) {
+        prev.style.display = 'none';
+    }
+});
