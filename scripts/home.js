@@ -20,7 +20,7 @@ const projects = [
         "topProject": true
     },
     {
-        id: 2,
+        "id": 2,
         "title": "Portfolio Website",
         "description": `"Get to know me and see what I can do!"`,
         "code": "https://github.com/syntax-ray/portfolio",
@@ -36,181 +36,39 @@ const projects = [
         "topProject": true
     },
     {
-        id: 3,
-        "title": "THREE",
-        "description": `"Get to know me and see what I can do!"`,
-        "code": "https://github.com/syntax-ray/portfolio",
+        "id": 3,
+        "title": "Construction Management",
+        "description": `"Use AI to manage your construction projects efficiently"`,
+        "code": "https://github.com/Donjerzy/construction-management",
         "demo": {
             "hasDemo": false,
             "link": undefined
         },
         "website": {
-            "hasWebsite": true,
-            "link": "https://syntax-ray.github.io/portfolio/"
+            "hasWebsite": false,
+            "link": undefined
         },
-        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
+        "tools": ["HTML", "CSS", "Javascript", "Svelte", "Python", "Kotlin", "Spring", "Tailwind"],
         "topProject": true
+
     },
     {
-        id: 4,
-        "title": "FOUR",
-        "description": `"Get to know me and see what I can do!"`,
-        "code": "https://github.com/syntax-ray/portfolio",
+        "id": 4,
+        "title": "Jackpot",
+        "description": `"Use AI to generate soccer predictions (IN PROGRESS)"`,
+        "code": "https://github.com/Donjerzy/jackpot",
         "demo": {
             "hasDemo": false,
             "link": undefined
         },
         "website": {
-            "hasWebsite": true,
-            "link": "https://syntax-ray.github.io/portfolio/"
-        },
-        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
-        "topProject": true
-    },
-    {
-        id: 5,
-        "title": "FIVE",
-        "description": `"Get to know me and see what I can do!"`,
-        "code": "https://github.com/syntax-ray/portfolio",
-        "demo": {
-            "hasDemo": false,
+            "hasWebsite": false,
             "link": undefined
         },
-        "website": {
-            "hasWebsite": true,
-            "link": "https://syntax-ray.github.io/portfolio/"
-        },
-        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
-        "topProject": true
-    },
-    {
-        id: 6,
-        "title": "SIX",
-        "description": `"Get to know me and see what I can do!"`,
-        "code": "https://github.com/syntax-ray/portfolio",
-        "demo": {
-            "hasDemo": false,
-            "link": undefined
-        },
-        "website": {
-            "hasWebsite": true,
-            "link": "https://syntax-ray.github.io/portfolio/"
-        },
-        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
-        "topProject": true
-    },
-    {
-        id: 7,
-        "title": "SEVEN",
-        "description": `"Get to know me and see what I can do!"`,
-        "code": "https://github.com/syntax-ray/portfolio",
-        "demo": {
-            "hasDemo": false,
-            "link": undefined
-        },
-        "website": {
-            "hasWebsite": true,
-            "link": "https://syntax-ray.github.io/portfolio/"
-        },
-        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
-        "topProject": true
-    },
-    {
-        id: 8,
-        "title": "EIGHT",
-        "description": `"Get to know me and see what I can do!"`,
-        "code": "https://github.com/syntax-ray/portfolio",
-        "demo": {
-            "hasDemo": false,
-            "link": undefined
-        },
-        "website": {
-            "hasWebsite": true,
-            "link": "https://syntax-ray.github.io/portfolio/"
-        },
-        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
-        "topProject": true
-    },
-    {
-        id: 9,
-        "title": "NINE",
-        "description": `"Get to know me and see what I can do!"`,
-        "code": "https://github.com/syntax-ray/portfolio",
-        "demo": {
-            "hasDemo": false,
-            "link": undefined
-        },
-        "website": {
-            "hasWebsite": true,
-            "link": "https://syntax-ray.github.io/portfolio/"
-        },
-        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
-        "topProject": true
-    },
-    {
-        id: 10,
-        "title": "TEN",
-        "description": `"Get to know me and see what I can do!"`,
-        "code": "https://github.com/syntax-ray/portfolio",
-        "demo": {
-            "hasDemo": false,
-            "link": undefined
-        },
-        "website": {
-            "hasWebsite": true,
-            "link": "https://syntax-ray.github.io/portfolio/"
-        },
-        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
-        "topProject": true
-    },
-    {
-        id: 11,
-        "title": "ELEVEN",
-        "description": `"Get to know me and see what I can do!"`,
-        "code": "https://github.com/syntax-ray/portfolio",
-        "demo": {
-            "hasDemo": false,
-            "link": undefined
-        },
-        "website": {
-            "hasWebsite": true,
-            "link": "https://syntax-ray.github.io/portfolio/"
-        },
-        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
-        "topProject": true
-    },
-    {
-        id: 12,
-        "title": "TWELVE",
-        "description": `"Get to know me and see what I can do!"`,
-        "code": "https://github.com/syntax-ray/portfolio",
-        "demo": {
-            "hasDemo": false,
-            "link": undefined
-        },
-        "website": {
-            "hasWebsite": true,
-            "link": "https://syntax-ray.github.io/portfolio/"
-        },
-        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
-        "topProject": true
-    },
-    {
-        id: 13,
-        "title": "THIRTEEN",
-        "description": `"Get to know me and see what I can do!"`,
-        "code": "https://github.com/syntax-ray/portfolio",
-        "demo": {
-            "hasDemo": false,
-            "link": undefined
-        },
-        "website": {
-            "hasWebsite": true,
-            "link": "https://syntax-ray.github.io/portfolio/"
-        },
-        "tools": ["HTML", "CSS", "Javascript", "GithubPages"],
-        "topProject": true
-    },
+        "tools": ["Python"],
+        "topProject": false
+
+    }
 ];
 
 let searchValues = undefined;
@@ -596,19 +454,13 @@ function loadDisplayProjects() {
         projectsDisplayDiv.style.fontSize = "1.8rem";
         projectsDisplayDiv.style.marginTop = "20px";
     } else {
-        // console.log(`Before Project index start === ${projectIndexStart}`);
-        // console.log(`Before Project index end === ${projectIndexEnd}`);
         projectsDisplayDiv.style.display = "block";
         let projectSlice = projectsDisplay.slice(projectIndexStart, projectIndexEnd);
-        // console.log(projectSlice);
         let row = createProjectsSectionRow(projectSlice);
         projectsDisplayDiv.appendChild(row);
         projectIndexStart = projectIndexEnd;
         projectIndexEnd += 2;
     }
-    // console.log(`After Project index start === ${projectIndexStart}`);
-    // console.log(`After Project index end === ${projectIndexEnd}`);
-    // console.log(`After Contents in page === ${contentsInPage}`);
 }
 
 function toggleDisplay(el, displayType = 'block') {
