@@ -16,7 +16,7 @@ const projects = [
             "hasWebsite": false,
             "link": undefined
         },
-        "tools": ["Python", "SQL", "Docker", "PostgreSQL", "MSSQL"],
+        "tools": ["Python", "SQL", "Docker", "Postgres", "MSSQL"],
         "topProject": true
     },
     {
@@ -212,6 +212,8 @@ const projects = [
         "topProject": true
     },
 ];
+
+let searchValues = undefined;
 
 let topProjects = projects.filter((project) => project["topProject"] === true);
 let projectsDisplay = projects;
@@ -622,8 +624,65 @@ function toggleDisplay(el, displayType = 'block') {
 }
 
 function handleSearch(event) {
-    console.log(event.target.value);
+    if (event.target.value.trim().length === 0) {
+        projectsDisplay = projects;
+        projectIndexStart = 0;
+        projectIndexEnd =  2;
+        loadDisplayProjects();
+        prev.style.display = 'none';
+        showNextButton(next);
+    } else {
+        let new_list = [];
+        let matchedKeys = [];
+        if (searchValues === undefined) {
+            searchValues = JSON.parse(sessionStorage.getItem('search-obj'));
+        } 
+        let searchTerms = event.target.value.toLowerCase().trim().split(/\s+/);
+        for (const term of searchTerms) {
+            for (const key in searchValues) {
+                if (!matchedKeys.includes(key)) {
+                    if(searchValues[key].includes(term)) {
+                        new_list.push(projects[key]);
+                        matchedKeys.push(key);
+                    }
+                }
+            }
+        }
+        projectsDisplay = new_list;
+        projectIndexStart = 0;
+        projectIndexEnd =  2;
+        loadDisplayProjects();
+        prev.style.display = 'none';
+        showNextButton(next);
+    }
 }
+
+function generateSearchValues() {
+    const searchObj = {}
+    let i = 0
+    for (const project of projects) {
+        let key = project.title.toLowerCase().trim().split(" ")
+        const cleanedDescription = project.description.replaceAll('"', "")
+                .replaceAll("!", "")
+                .toLocaleLowerCase().trim().split(" ");
+        key.push(...cleanedDescription);
+        project.tools.forEach(tool => {
+            key.push(tool.toLowerCase().trim())
+        });
+        searchObj[i] = key
+        i += 1;
+    }
+    sessionStorage.setItem('search-obj', JSON.stringify(searchObj))
+}
+
+function showNextButton(btn) {
+    if (projectsDisplay.length > 2) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+}
+
 
 // click listeners
 mail.addEventListener("click", (event)=> {
@@ -691,11 +750,7 @@ next.style.fontSize = "1.25rem";
 
 projectsDiv.appendChild(navDiv);
 
-if (projectsDisplay.length > 2) {
-    next.style.display = "block";
-} else {
-    next.style.display = "none";
-}
+showNextButton(next)
 navDiv.append(next);
 
 next.addEventListener('mouseenter', () => {
@@ -729,3 +784,7 @@ prev.addEventListener('click', () => {
         prev.style.display = 'none';
     }
 });
+
+if (sessionStorage.getItem('search-obj') === null) {
+    generateSearchValues();
+}
