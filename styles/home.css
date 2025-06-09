@@ -203,6 +203,14 @@ a:hover,
 
 
 #snackbar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    height: 40px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     visibility: hidden;
     min-width: 100px;
     color: #fff; 
