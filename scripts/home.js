@@ -626,9 +626,18 @@ function handleSearch(event) {
 }
 
 // click listeners
-mail.addEventListener("click", ()=> contactButtonClicked("mail"));
-github.addEventListener("click", () => contactButtonClicked("github"));
-linkedin.addEventListener("click", () => contactButtonClicked("linkedin"));
+mail.addEventListener("click", (event)=> {
+    event.preventDefault();
+    contactButtonClicked("mail")
+} );
+github.addEventListener("click", (event) => {
+    event.preventDefault();
+    contactButtonClicked("github")
+});
+linkedin.addEventListener("click", (event) => {
+    event.preventDefault();
+    contactButtonClicked("linkedin")
+});
 searchIcon.addEventListener("click", ()=> searchIconClicked());
 search.addEventListener("input", (event)=> handleSearch(event));
 
