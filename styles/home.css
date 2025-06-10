@@ -328,7 +328,8 @@ a:hover,
 }
 
 #project-demo,
-#project-website {
+#project-website,
+#project-source-code {
     display: none;
 } 
 
