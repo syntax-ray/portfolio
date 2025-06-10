@@ -92,12 +92,14 @@ const LINKEDIN = "https://linkedin.com/in/donald-okoth-6a225720b";
 let mail = document.querySelector("#mail");
 let github = document.querySelector("#github");
 let linkedin = document.querySelector('#linkedin');
+let searchIcon = document.querySelector("#search-svg");
+
 let contactPopUp = document.querySelector("#contact-popup");
 let topProjectsSection = document.querySelector(".actual-top-projects");
-let searchIcon = document.querySelector("#search-svg");
 let searchInput = document.querySelector("#search");
 let projectsDisplayDiv = document.querySelector("#projects-display");
 let projectsDiv = document.querySelector(".projects");
+let searchValue = document.querySelector("#search-value")
 
 
 let mailClicked = false;
@@ -473,10 +475,12 @@ function toggleDisplay(el, displayType = 'block') {
 
   function searchIconClicked() {
     toggleDisplay(searchInput);
+    toggleDisplay(searchValue);
 }
 
 function handleSearch(event) {
     if (event.target.value.trim().length === 0) {
+        searchValue.innerHTML = "";
         projectsDisplay = projects;
         projectIndexStart = 0;
         projectIndexEnd =  2;
@@ -484,6 +488,7 @@ function handleSearch(event) {
         prev.style.display = 'none';
         showNextButton(next);
     } else {
+        let colorCoded = [];
         let new_list = [];
         let matchedKeys = [];
         if (searchValues === undefined) {
@@ -491,15 +496,24 @@ function handleSearch(event) {
         } 
         let searchTerms = event.target.value.toLowerCase().trim().split(/\s+/);
         for (const term of searchTerms) {
+            let present = false;
             for (const key in searchValues) {
+                if (searchValues[key].includes(term) && !present) {
+                    colorCoded.push(`<span style="color: green;">${term}</span>`);
+                    present = true
+                }
                 if (!matchedKeys.includes(key)) {
                     if(searchValues[key].includes(term)) {
                         new_list.push(projects[key]);
                         matchedKeys.push(key);
                     }
-                }
+                } 
+            }
+            if (!present) {
+                colorCoded.push(`<span style="color: red;">${term}</span>`);
             }
         }
+        searchValue.innerHTML = colorCoded.join(" ");
         projectsDisplay = new_list;
         projectIndexStart = 0;
         projectIndexEnd =  2;

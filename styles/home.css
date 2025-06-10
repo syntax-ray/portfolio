@@ -395,7 +395,43 @@ a:hover,
 
 #projects-display {
     display: none;
-    margin-top: 40px;
+    margin-top: 60px;
     margin-bottom: 20px;
     min-height: 200px;
+}
+
+#search-and-display {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#search-value {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    height: 48px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    color: black;
+    white-space: nowrap;
+    pointer-events: none; /* so clicks go through */
+    transform: translateY(-8px); /* small gap */
+    display: none;
+    font-family: "Viga", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 100;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
