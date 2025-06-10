@@ -7,7 +7,10 @@ const projects = [
         "id": 1,
         "title": "Data Migration Solution",
         "description": `"Migrate your data between data stores with ease!"`,
-        "code": "https://github.com/syntax-ray/demo-f_e-migration",
+        "code": {
+            "isPublic": true,
+            "link": "https://github.com/syntax-ray/demo-f_e-migration"
+        },
         "demo": {
             "hasDemo": false,
             "link": undefined
@@ -23,7 +26,10 @@ const projects = [
         "id": 2,
         "title": "Portfolio Website",
         "description": `"Get to know me and see what I can do!"`,
-        "code": "https://github.com/syntax-ray/portfolio",
+        "code": {
+            "isPublic": true,
+            "link": "https://github.com/syntax-ray/portfolio"
+        },
         "demo": {
             "hasDemo": false,
             "link": undefined
@@ -39,7 +45,10 @@ const projects = [
         "id": 3,
         "title": "Construction Management",
         "description": `"Use AI to manage your construction projects efficiently"`,
-        "code": "https://github.com/Donjerzy/construction-management",
+        "code": {
+            "isPublic": true,
+            "link": "https://github.com/Donjerzy/construction-management"
+        },
         "demo": {
             "hasDemo": false,
             "link": undefined
@@ -54,9 +63,12 @@ const projects = [
     },
     {
         "id": 4,
-        "title": "Jackpot",
-        "description": `"Use AI to generate soccer predictions (IN PROGRESS)"`,
-        "code": "https://github.com/Donjerzy/jackpot",
+        "title": "BetSfr",
+        "description": `"Let AI call the match!" (IN PROGRESS)`,
+        "code": {
+            "isPublic": false,
+            "link": undefined
+        },
         "demo": {
             "hasDemo": false,
             "link": undefined
@@ -92,12 +104,14 @@ const LINKEDIN = "https://linkedin.com/in/donald-okoth-6a225720b";
 let mail = document.querySelector("#mail");
 let github = document.querySelector("#github");
 let linkedin = document.querySelector('#linkedin');
+let searchIcon = document.querySelector("#search-svg");
+
 let contactPopUp = document.querySelector("#contact-popup");
 let topProjectsSection = document.querySelector(".actual-top-projects");
-let searchIcon = document.querySelector("#search-svg");
 let searchInput = document.querySelector("#search");
 let projectsDisplayDiv = document.querySelector("#projects-display");
 let projectsDiv = document.querySelector(".projects");
+let searchValue = document.querySelector("#search-value")
 
 
 let mailClicked = false;
@@ -293,9 +307,13 @@ function displayProject (project) {
         toolItem.textContent = tool;
         projectToolsList.appendChild(toolItem);
     });
-    projectCode.href = project.code;
-    projectCode.target = "_blank";  
-    projectCode.rel = "noopener noreferrer";
+    
+    if (project.code.isPublic) {
+        projectCode.style.display = "inline-block";
+        projectCode.href = project.code.link;
+        projectCode.target = "_blank";  
+        projectCode.rel = "noopener noreferrer"; 
+    }
     
     if (project.demo.hasDemo) {
         projectDemo.style.display = "inline-block";
@@ -358,6 +376,8 @@ function createProjectsSectionRow (projects) {
         projectContentDiv.className = "project-content-div";
 
         const projectContent = document.createElement("p");
+        projectContent.style.paddingLeft = "20px";
+        projectContent.style.paddingRight = "20px";
         projectContent.textContent = project.description;
         projectContent.style.fontSize = '1.2rem';
         projectContent.style.color = REGULAR_TXT_CLR;
@@ -415,12 +435,14 @@ function createProjectsSectionRow (projects) {
         }
 
         // Code link
-        const codeLink = document.createElement("a");
-        codeLink.href = project.code;
-        codeLink.className = "project-link";
-        codeLink.target = "_blank";
-        codeLink.textContent = "Code";
-        projectLinks.appendChild(codeLink);
+        if (project.code.isPublic) {
+            const codeLink = document.createElement("a");
+            codeLink.href = project.code.link;
+            codeLink.className = "project-link";
+            codeLink.target = "_blank";
+            codeLink.textContent = "Code";
+            projectLinks.appendChild(codeLink);
+        }
 
         // Website link
         if (project.website.hasWebsite) {
@@ -473,10 +495,12 @@ function toggleDisplay(el, displayType = 'block') {
 
   function searchIconClicked() {
     toggleDisplay(searchInput);
+    toggleDisplay(searchValue);
 }
 
 function handleSearch(event) {
     if (event.target.value.trim().length === 0) {
+        searchValue.innerHTML = "";
         projectsDisplay = projects;
         projectIndexStart = 0;
         projectIndexEnd =  2;
@@ -484,6 +508,7 @@ function handleSearch(event) {
         prev.style.display = 'none';
         showNextButton(next);
     } else {
+        let colorCoded = [];
         let new_list = [];
         let matchedKeys = [];
         if (searchValues === undefined) {
@@ -491,15 +516,24 @@ function handleSearch(event) {
         } 
         let searchTerms = event.target.value.toLowerCase().trim().split(/\s+/);
         for (const term of searchTerms) {
+            let present = false;
             for (const key in searchValues) {
+                if (searchValues[key].includes(term) && !present) {
+                    colorCoded.push(`<span style="color: green;">${term}</span>`);
+                    present = true
+                }
                 if (!matchedKeys.includes(key)) {
                     if(searchValues[key].includes(term)) {
                         new_list.push(projects[key]);
                         matchedKeys.push(key);
                     }
-                }
+                } 
+            }
+            if (!present) {
+                colorCoded.push(`<span style="color: red;">${term}</span>`);
             }
         }
+        searchValue.innerHTML = colorCoded.join(" ");
         projectsDisplay = new_list;
         projectIndexStart = 0;
         projectIndexEnd =  2;
