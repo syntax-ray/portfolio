@@ -80,6 +80,26 @@ const projects = [
         "tools": ["Python"],
         "topProject": false
 
+    },
+    {
+        "id": 5,
+        "title": "Asteroids",
+        "description": `"Shoot down the asteroids to survive!"`,
+        "code": {
+            "isPublic": true,
+            "link": "https://github.com/syntax-ray/asteroids"
+        },
+        "demo": {
+            "hasDemo": false,
+            "link": undefined
+        },
+        "website": {
+            "hasWebsite": false,
+            "link": undefined
+        },
+        "tools": ["Python"],
+        "topProject": false
+
     }
 ];
 
