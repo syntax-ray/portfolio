@@ -63,6 +63,25 @@ const projects = [
     },
     {
         "id": 4,
+        "title": "Asteroids",
+        "description": `"Shoot down the asteroids to survive!"`,
+        "code": {
+            "isPublic": true,
+            "link": "https://github.com/syntax-ray/asteroids"
+        },
+        "demo": {
+            "hasDemo": false,
+            "link": undefined
+        },
+        "website": {
+            "hasWebsite": false,
+            "link": undefined
+        },
+        "tools": ["Python"],
+        "topProject": false  
+    },
+    {
+        "id": 5,
         "title": "BetSfr",
         "description": `"Let AI call the match!" (IN PROGRESS)`,
         "code": {
@@ -79,28 +98,7 @@ const projects = [
         },
         "tools": ["Python"],
         "topProject": false
-
     },
-    {
-        "id": 5,
-        "title": "Asteroids",
-        "description": `"Shoot down the asteroids to survive!"`,
-        "code": {
-            "isPublic": true,
-            "link": "https://github.com/syntax-ray/asteroids"
-        },
-        "demo": {
-            "hasDemo": false,
-            "link": undefined
-        },
-        "website": {
-            "hasWebsite": false,
-            "link": undefined
-        },
-        "tools": ["Python"],
-        "topProject": false
-
-    }
 ];
 
 let searchValues = undefined;
